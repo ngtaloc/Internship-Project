@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+     
+    <bean id="excelViewbanLe" class="com.plumpc.excel.ExcelViewBanLe" />
+    <bean id="excelViewBanSi" class="com.plumpc.excel.ExcelViewBanSi" />
+    <bean id="excelViewbanTheoDon" class="com.plumpc.excel.ExcelViewBanTheoDon" />
+    <bean id="excelViewthuocDangCungCap" class="com.plumpc.excel.ExcelViewThuocDangCungCap" />
+    <bean id="excelViewdsNhaCungCap" class="com.plumpc.excel.ExcelViewNhaCungCap" />
+    <bean id="excelViewdsKhachHang" class="com.plumpc.excel.ExcelViewKhachHang" />
+    <bean id="excelViewdanhThu" class="com.plumpc.excel.ExcelViewDanhThu" />
+    <bean id="excelViewnkBanHang" class="com.plumpc.excel.ExcelViewBanHang" />
+ 	<bean id="excelViewnhapThem" class="com.plumpc.excel.ExcelViewKhachHang" />
+    <bean id="excelViewhetHan" class="com.plumpc.excel.ExcelViewDanhThu" />
+    <bean id="excelViewtop100Thuoc" class="com.plumpc.excel.ExcelViewBanHang" />
+ 
+    
+     
+</beans>

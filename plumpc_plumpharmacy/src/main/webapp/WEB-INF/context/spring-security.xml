@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security 
+    http://www.springframework.org/schema/security/spring-security.xsd">  
+    
+    
+	<http auto-config="true" use-expressions="true">
+		   <headers>
+		        <frame-options policy="SAMEORIGIN"/>
+		    </headers>
+		<!-- <intercept-url access="denyAll" pattern="/login" /> -->
+		<intercept-url pattern="/mainAdmin**" access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')"  /> 
+		 <!-- <intercept-url access="permitAll" pattern="/*" /> -->
+	 	<intercept-url pattern="/mainUser**"  access="hasRole('ROLE_USER')" /> 
+
+		<form-login login-page="/login"
+			login-processing-url="/checklogin"
+			authentication-success-handler-ref="myAuthenticationSuccessHandler"
+			authentication-failure-url="/login?error"
+			username-parameter="username" password-parameter="password" />
+		 
+	    <logout logout-url="/j_spring_security_logout"
+	      logout-success-url="/logout" delete-cookies="JSESSIONID" />		
+	      
+	</http>
+	
+	<!-- <beans:bean name="customUrlLogoutSuccessHandler" /> -->
+	<beans:bean id="myAuthenticationSuccessHandler"
+  class="com.plumpc.config.MySimpleUrlAuthenticationSuccessHandler" />
+
+	
+	<authentication-manager> <authentication-provider user-service-ref="myUserDetailsService"> 
+		<password-encoder hash="bcrypt"/> </authentication-provider> </authentication-manager>
+		
+	<!-- <authentication-manager>s
+		<authentication-provider>
+			<user-service>
+				<user name="admin" password="{noop}123456Aa" authorities="ROLE_ADMIN" />
+				<user name="user" password="{noop}123456Aa" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager> -->
+</beans:beans>

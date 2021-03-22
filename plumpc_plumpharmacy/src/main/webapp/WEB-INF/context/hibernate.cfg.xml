@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">fpt112233</property>
+        <property name="hibernate.connection.url">jdbc:mysql://13.82.30.74:3306/plumpc</property>
+        <property name="hibernate.connection.username">plumpc</property>
+        <property name="hibernate.connection.password">fpt112233</property>        
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.CharSet">utf8</property>
+		<property name="hibernate.connection.characterEncoding">utf8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+        
+        <mapping class="com.plumpc.entity.Patient"></mapping>
+        <mapping class="com.plumpc.entity.Supplier"></mapping>
+        <mapping class="com.plumpc.entity.Customer"></mapping>
+        <mapping class="com.plumpc.entity.User"></mapping>
+        <mapping class="com.plumpc.entity.DrugClassification"></mapping>
+        <mapping class="com.plumpc.entity.CountingUnits"></mapping>
+       	<mapping class="com.plumpc.entity.Decentralization"></mapping>
+       	<mapping class="com.plumpc.entity.Drug"></mapping>
+       	<mapping class="com.plumpc.entity.InvoiceClassification"></mapping>
+       	<mapping class="com.plumpc.entity.Invoice"></mapping>
+        <mapping class="com.plumpc.entity.PrescriptionByPharmacy"></mapping>
+        <mapping class="com.plumpc.entity.PrescriptionWholesale"></mapping>
+        <mapping class="com.plumpc.entity.PrescriptionHospital"></mapping>
+        <mapping class="com.plumpc.entity.PrescriptionRetail"></mapping>
+        <mapping class="com.plumpc.entity.PrescriptionDetailed"></mapping>
+        
+        
+        
+        
+    </session-factory>
+</hibernate-configuration>
